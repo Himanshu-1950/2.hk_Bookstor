@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="card p-4 shadow-lg rounded mx-auto" style="max-width: 500px; background-color: #f8f9fa;">
+    <h3 class="text-center mb-4 text-success font-weight-bold">Create Your Account</h3>
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label class="form-label text-secondary" for="username">Username</label>
+        <input type="text" name="username" id="username" class="form-control shadow-sm" placeholder="Enter your username" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label text-secondary" for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control shadow-sm" placeholder="Enter your password" required>
+      </div>
+      <div class="mb-4">
+        <label class="form-label text-secondary" for="confirm_password">Confirm Password</label>
+        <input type="password" name="confirm_password" id="confirm_password" class="form-control shadow-sm" placeholder="Confirm your password" required>
+      </div>
+      <button type="submit" class="btn btn-success w-100 py-2 btn-hover-effect">Register</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Logged Out{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="alert alert-info text-center p-4 shadow-lg rounded" style="max-width: 500px; margin: 0 auto;">
+    <h2 class="mb-4 text-primary">You’ve been logged out.</h2>
+    <p class="mb-4">Thank you for visiting! If you’d like to continue, please log in again.</p>
+    
+    <form method="POST" action="{% url 'logout' %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary w-100 py-2">Log in again</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

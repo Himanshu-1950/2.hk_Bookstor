@@ -1,0 +1,154 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        /* Basic resets */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fa;
+        }
+
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+
+        main {
+            padding: 30px 20px;
+        }
+
+        .book-list {
+            text-align: center;
+        }
+
+        .book-list h2 {
+            font-size: 32px;
+            color: #343a40;
+        }
+
+        .books {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            margin-top: 20px;
+        }
+
+        .book-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .book-card h3 {
+            font-size: 24px;
+            color: #007bff;
+        }
+
+        .book-card p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .book-card strong {
+            font-size: 20px;
+            color: #28a745;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <h1>My Bookstore</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'books' %}">Books</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="book-list">
+            <h2>Available Books</h2>
+            <div class="books">
+                {% for book in books %}
+                <div class="book-card">
+                    <h3>{{ book.title }}</h3>
+                    <p>{{ book.description }}</p>
+                    <p><strong>${{ book.price }}</strong></p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Bookstore</p>
+    </footer>
+</body>
+
+</html>
