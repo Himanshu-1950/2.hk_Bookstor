@@ -92,17 +92,7 @@ Once logged in as an admin, you can manage books via the Django admin panel:
 ![Screenshot 2025-04-25 164412](https://github.com/user-attachments/assets/22ad45ed-2ae9-421a-858b-7787446f6e8d)
 
 ### Books List Page
+![WhatsApp Image 2025-04-25 at 19 24 26_47541564](https://github.com/user-attachments/assets/75790168-1c26-4062-b36c-533b33bdae4a)
 
 
-## Contributing
 
-If you'd like to contribute to the project, feel free to fork the repository, make changes, and create a pull request. We welcome contributions!
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Django for providing a powerful web framework.
-- Bootstrap for making it easy to create responsive designs.
