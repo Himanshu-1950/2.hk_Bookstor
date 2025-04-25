@@ -84,7 +84,7 @@ Once logged in as an admin, you can manage books via the Django admin panel:
 - URL: `http://127.0.0.1:8000/admin/`
 - Username and password: Use the superuser credentials created in step 7.
 
-# Output
+# ScreenShot
 ### Login Page
 ![Screenshot 2025-04-25 164528](https://github.com/user-attachments/assets/bcbeb63c-e2e8-4b99-ab04-47725aabc229)
 
